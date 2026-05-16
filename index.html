@@ -3,49 +3,62 @@
 <head>
 
 <style>
+    /* AJUSTE TOTAL PARA CUALQUIER CELULAR */
     @media (max-width: 768px) {
-        /* Reducimos el tamaño de letra general */
-        html {
-            font-size: 14px !important;
-        }
-
-        .container, section, header {
+        /* 1. Evitamos que la pantalla baile de lado a lado */
+        html, body {
+            overflow-x: hidden !important;
             width: 100% !important;
-            padding: 5px !important; /* Menos espacio muerto a los lados */
-            margin: 5px 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
-        /* Hacemos las tarjetas más delgadas y menos altas */
+        /* 2. Contenedores al ancho total real */
+        .container, section, header, footer {
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 15px 10px !important; 
+            margin: 0 !important;
+            box-sizing: border-box !important;
+        }
+
+        /* 3. Tarjetas flexibles (se ajustan solas al tamaño del cel) */
         .card, .area-card-full, .socio-card-oa-mini {
-            padding: 10px !important;
-            margin-bottom: 10px !important;
-            width: 95% !important; /* Que no pegue al borde total */
-            margin-left: auto !important;
-            margin-right: auto !important;
+            width: 100% !important; 
+            max-width: 100% !important;
+            margin: 10px 0 !important;
+            padding: 15px !important;
+            box-sizing: border-box !important;
+            display: block !important;
         }
 
-        /* Ajustamos los títulos para que no ocupen media pantalla */
-        h1 { font-size: 1.6rem !important; }
-        h2 { font-size: 1.3rem !important; margin-top: 10px !important; }
-        h3 { font-size: 1.1rem !important; }
+        /* 4. Letra que no se amontona */
+        h1 { font-size: 1.5rem !important; line-height: 1.2 !important; }
+        h2 { font-size: 1.3rem !important; }
+        p, li { font-size: 1rem !important; line-height: 1.4 !important; }
 
-        /* Los botones más chaparritos */
-        .btn-oa-compact {
-            padding: 8px 15px !important;
-            font-size: 0.9rem !important;
-        }
-
-        /* Forzamos a que las imágenes no se desborden */
+        /* 5. Imágenes inteligentes (nunca se salen de la pantalla) */
         img {
-            max-width: 90% !important;
+            max-width: 100% !important;
             height: auto !important;
             display: block !important;
-            margin: 0 auto !important;
+            margin: 10px auto !important;
         }
 
-        /* Si hay iconos o logos, que se hagan chiquitos */
-        .logo, .icon {
-            max-width: 150px !important;
+        /* 6. Botones que se pueden picar bien con el dedo */
+        .btn-oa-compact {
+            display: block !important;
+            width: 100% !important;
+            text-align: center !important;
+            margin: 5px 0 !important;
+            padding: 12px !important;
+        }
+
+        /* 7. Arreglo para grids (fuerza una sola columna en todo) */
+        div[style*="display: grid"], .grid, .row {
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
         }
     }
 </style>
