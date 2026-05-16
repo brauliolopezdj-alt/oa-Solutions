@@ -1,0 +1,1033 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<style>
+    /* Esto es lo que hace la magia en celulares */
+    @media (max-width: 768px) {
+        
+        /* METÍ ESTO AQUÍ ADENTRO PARA QUE NO SE VEA GRANDE EN PC */
+        .container, section, header {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 10px 0 !important;
+            box-sizing: border-box !important;
+        }
+
+        /* Fuerza a que todas las cuadrículas sean de 1 sola columna */
+        div[style*="display: grid"], 
+        .grid {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+        }
+
+        /* Ajusta el contenedor de los botones de contacto */
+        div[style*="display: flex"] {
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+
+        /* Evita que las tarjetas o botones se vean gigantes o se corten */
+        .card, .area-card-full, .socio-card-oa-mini, .btn-oa-compact {
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+
+        /* Ajusta los textos y padding para que no se peguen a la orilla */
+        section, div {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+
+        h2 {
+            font-size: 1.5rem !important;
+        }
+
+        /* Ajusta las imágenes de trayectoria y áreas de conocimiento */
+        img {
+            height: auto !important;
+            max-width: 100% !important;
+        }
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O&A Consulting Solutions</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f4f4f4; color: #333; }
+        header { background: #002347; color: white; padding: 40px; text-align: center; border-bottom: 5px solid #c5a059; }
+        header h1 { font-size: 2rem; }
+        header span { color: #c5a059; }
+        .eslogan { color: #c5a059; margin-top: 10px; font-style: italic; }
+        .container { max-width: 1100px; margin: 40px auto; padding: 20px; }
+        h2 { color: #002347; border-left: 5px solid #c5a059; padding-left: 15px; margin-bottom: 30px; }
+        
+        /* SECCION SOBRE NOSOTROS */
+        .sobre-nosotros { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 10px; 
+            margin-bottom: 40px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .sobre-nosotros p { margin-bottom: 15px; line-height: 1.8; font-size: 1.1rem; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 180px; object-fit: cover; border-bottom: 4px solid #c5a059; }
+        .card-body { padding: 20px; }
+        .footer { background: #002347; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    </style>
+</head>
+
+<style>
+
+
+html { scroll-behavior: smooth; }
+
+/* Estilos del Menú Lateral DERECHO */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 3000;
+    top: 0;
+    right: 0; /* Cambio a la derecha */
+    background-color: #002347;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    border-left: 3px solid #c5a059; /* Borde ahora a la izquierda del menú */
+}
+
+.sidebar a {
+    padding: 10px 25px;
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    font-family: sans-serif;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+    text-align: right; /* Texto alineado a la derecha */
+}
+
+.sidebar a:hover { 
+    color: #c5a059; 
+    background: rgba(197, 160, 89, 0.1); 
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    left: 20px; /* X a la izquierda del panel */
+    font-size: 36px;
+    border: none;
+    color: #c5a059;
+}
+
+/* Botón de Hamburguesa en la Derecha */
+.openbtn {
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #002347;
+    color: #c5a059;
+    padding: 10px 15px;
+    border: 2px solid #c5a059;
+    position: fixed;
+    top: 20px;
+    right: 20px; /* Aquí es donde lo querías */
+    z-index: 2500;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+  /* Esto le pone el fondo a toda la pantalla sin tocar tus etiquetas */
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    animation: moveBackground 40s linear infinite alternate;
+  }
+
+  @keyframes moveBackground {
+    from { background-position: left center; }
+    to { background-position: right center; }
+  }
+
+  /* Esto es para que las secciones blancas no tapen totalmente el fondo */
+  section {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1100px;
+  }
+</style>
+
+
+<body>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#" onclick="closeNav()">🏠 Inicio</a>
+  <a href="#servicios-ofrecidos" onclick="closeNav()">🛠️ Servicios que ofrecemos</a>
+  <a href="#servicios-especializados" onclick="closeNav()">⭐ Nuestros Servicios Especializados</a>
+  <a href="#nosotros" onclick="closeNav()">⚖️ Filosofía organizacional</a>
+  <a href="#metodologia" onclick="closeNav()">⚙️ ¿Cómo trabajamos?</a>
+  <a href="#liderazgo" onclick="closeNav()">👥 Dirección y liderazgo</a>
+  <a href="#trayectoria" onclick="closeNav()">📈 Nuestra trayectoria</a>
+  <a href="#certificaciones" onclick="closeNav()">📜 Certificaciones</a>
+  <a href="#areas-conocimiento" onclick="closeNav()">🧠 Áreas de conocimiento</a>
+  <a href="#socios" onclick="closeNav()">🤝 Nuestros socios</a>
+  <a href="#ubicacion" onclick="closeNav()">🗺️ Ubicación</a>
+  <a href="#contacto" onclick="closeNav()">📞 Contactanos</a>
+</div>
+
+<button class="openbtn" onclick="openNav()">☰ MENÚ</button>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "300px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+}
+</script>
+
+
+
+
+<!-- Logotipo en la parte superior -->
+<header style="background-color: #2d3e50; padding: 10px; display: flex; align-items: center;">
+   
+<img src="1000015245_3.jpeg.jpeg" alt="Logo OA Consulting" style="width: 150px; height: auto;">
+
+</header>
+
+
+    <header>
+        <h1>O&A <span>Consulting Solutions</span></h1>
+        <p class="eslogan">"Innovando Resultados, Creando Oportunidades"</p>
+    </header>
+
+    <div class="container">
+        
+
+<section class="sobre-nosotros" style="
+    background-color: #002347 !important; 
+    border: 4px solid #c5a059; 
+    border-radius: 10px; 
+    padding: 35px; 
+    margin: 40px auto; 
+    max-width: 1000px; 
+    color: white !important; 
+    font-family: Arial, sans-serif; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+
+    <h2 style="color: #c5a059; border-left: 5px solid #c5a059; padding-left: 15px; margin-bottom: 25px; font-size: 1.8em; text-transform: uppercase;">
+        Sobre O&A Consulting Solutions
+    </h2>
+
+    <p style="font-size: 1.1em; line-height: 1.8; text-align: justify; margin-bottom: 20px;">
+        Somos una firma integral de consultor&iacute;a con m&aacute;s de 5 a&ntilde;os de experiencia, dedicada a brindar soluciones fiscales, administrativas y financieras de alto nivel. Nuestro enfoque se centra en la innovaci&oacute;n de resultados para empresas y personas f&iacute;sicas.
+    </p>
+
+    <p style="font-size: 1.1em; line-height: 1.8; text-align: justify;">
+        <strong style="color: #c5a059;">MAS O & A:</strong> Consulting Solutions O&A, una empresa de consultoría empresarial especializada en el área financiera, fiscal y administrativa aplicada al Businees Intelligence; brindando soluciones estratégicas, asesoramiento y acompañamiento a micros, pequeñas y medianas empresas de todos los sectores.
+    </p>
+
+    <p style="font-size: 1.1em; line-height: 1.8; text-align: justify; margin-top: 15px;">
+        Nuestro equipo de consultores altamente calificados y con amplia experiencia trabaja en estrecha colaboración con nuestros clientes para identificar oportunidades de crecimiento, optimizar operaciones y superar desafíos empresariales. Nos enorgullece ofrecer soluciones personalizadas y orientadas a resultados que impulsan el éxito a largo plazo de nuestros clientes.
+    </p>
+</section>
+
+
+<style>
+    /* Esto es lo único que se agrega para el movimiento */
+    .card { overflow: hidden; transition: transform 0.3s ease; }
+    .card img { transition: transform 0.5s ease; width: 100%; display: block; }
+    .card:hover img { transform: scale(1.1); }
+</style>
+
+
+<section id="servicios-ofrecidos" style="padding: 30px 15px !important; background-color: #002347 !important; text-align: center !important; font-family: sans-serif !important; border: 5px solid #c5a059 !important; max-width: 1100px !important; margin: 20px auto !important;">
+    
+    <h2 style="color: #c5a059 !important; margin-bottom: 25px !important; font-size: 1.6em !important; border-left: 5px solid #c5a059 !important; padding-left: 12px !important; display: inline-block !important;">
+        Servicios que Ofrecemos
+    </h2>
+
+    <div style="margin-bottom: 30px !important; display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 15px !important;">
+        <div style="flex: 1 !important; min-width: 280px !important; text-align: left !important; padding: 15px !important; border-left: 3px solid #c5a059 !important; background: rgba(255,255,255,0.05) !important;">
+            <h3 style="color: #c5a059 !important; font-size: 1.1em !important; margin-bottom: 8px !important;">Misión</h3>
+            <p style="color: white !important; font-size: 0.95em !important; line-height: 1.4 !important;">Una declaración que explica el propósito fundamental de la organización y cómo contribuye a la sociedad.</p>
+        </div>
+        <div style="flex: 1 !important; min-width: 280px !important; text-align: left !important; padding: 15px !important; border-left: 3px solid #c5a059 !important; background: rgba(255,255,255,0.05) !important;">
+            <h3 style="color: #c5a059 !important; font-size: 1.1em !important; margin-bottom: 8px !important;">Visión</h3>
+            <p style="color: white !important; font-size: 0.95em !important; line-height: 1.4 !important;">Una declaración que describe el estado futuro deseado de la organización.</p>
+        </div>
+    </div>
+    
+    <div style="display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 20px !important;">
+        
+        <div style="background-color: #002347 !important; padding: 15px !important; border-radius: 8px !important; width: 240px !important; height: 400px !important; border: 2px solid #c5a059 !important; box-shadow: 0 5px 15px rgba(0,0,0,0.4) !important; display: flex !important; flex-direction: column !important;">
+            <div style="font-size: 24px !important; margin-bottom: 8px !important;">📉</div>
+            <h4 style="color: #c5a059 !important; font-size: 1.1em !important; margin-bottom: 10px !important;">Análisis de Datos</h4>
+            <div style="overflow-y: auto !important; padding-right: 5px !important; text-align: left !important; flex-grow: 1 !important;">
+                <p style="color: white !important; font-size: 0.85em !important; line-height: 1.4 !important; white-space: pre-line !important;">° Elaboración de bases de datos
+°Creación de Dashsboard financiero, ventas, producción,etc.
+°Interpretación de los dashborad para la toma de decisiones.
+°Capacitación en el manejo, visualización de datos.</p>
+            </div>
+        </div>
+
+        <div style="background-color: #002347 !important; padding: 15px !important; border-radius: 8px !important; width: 240px !important; height: 400px !important; border: 2px solid #c5a059 !important; box-shadow: 0 5px 15px rgba(0,0,0,0.4) !important; display: flex !important; flex-direction: column !important;">
+            <div style="font-size: 24px !important; margin-bottom: 8px !important; color: #c5a059; font-weight: bold;">[ $ ]</div>
+            <h4 style="color: #c5a059 !important; font-size: 1.1em !important; margin-bottom: 10px !important;">Contabilidad Financiera</h4>
+            <div style="overflow-y: auto !important; padding-right: 5px !important; text-align: left !important; flex-grow: 1 !important;">
+                <p style="color: white !important; font-size: 0.85em !important; line-height: 1.4 !important; white-space: pre-line !important;">Registro de Transacciones:
+Registrar todas las transacciones financieras de la entidad en libros contables, como diarios y mayores.
+Clasificación y Codificación:
+Clasificar y codificar adecuadamente las transacciones para facilitar su seguimiento y análisis.
+Elaboración de Estados Financieros:
+Preparar estados financieros como el balance, el estado de resultados y el flujo de efectivo siguiendo los principios contables generalmente aceptados (GAAP) o normativas contables específicas.
+Cierre de Periodo:
+Realizar ajustes contables y cerrar los libros al final de cada período contable para preparar los estados financieros.
+Auditoría Interna:
+Realizar auditorías internas para garantizar la integridad de los procesos contables y el cumplimiento de políticas y procedimientos.
+Cumplimiento Normativo:
+Asegurarse de que la entidad cumpla con todas las normativas contables y fiscales aplicables.
+Gestión de Activos Fijos:
+Mantener registros precisos de los activos fijos, su depreciación y amortización.
+Análisis de Razones Financieras:
+Calcular y analizar ratios financieros para evaluar el rendimiento y la salud financiera de la entidad.
+Presentación de Informes Trimestrales y Anuales:
+Preparar y presentar informes financieros periódicos a la gerencia, accionistas, reguladores y otros interesados.
+Colaboración con Auditorías Externas:
+Facilitar auditorías externas proporcionando la información necesaria a auditores independientes.
+Manejo de Impuestos:
+Preparar y presentar declaraciones de impuestos de acuerdo con las leyes fiscales aplicables.
+Gestión de Riesgos Contables:
+Identificar y gestionar los riesgos contables para evitar errores y fraudes.
+Implementación de Cambios Contables:
+Aplicar y comunicar cambios en las normas contables que afecten a la entidad.
+Capacitación y Desarrollo:
+Mantenerse actualizado con respecto a cambios en las normativas contables y proporcionar capacitación a los miembros del equipo contable.</p>
+            </div>
+        </div>
+
+        <div style="background-color: #002347 !important; padding: 15px !important; border-radius: 8px !important; width: 240px !important; height: 400px !important; border: 2px solid #c5a059 !important; box-shadow: 0 5px 15px rgba(0,0,0,0.4) !important; display: flex !important; flex-direction: column !important;">
+            <div style="font-size: 24px !important; margin-bottom: 8px !important;">🏛️</div>
+            <h4 style="color: #c5a059 !important; font-size: 1.1em !important; margin-bottom: 10px !important;">Impuestos</h4>
+            <div style="overflow-y: auto !important; padding-right: 5px !important; text-align: left !important; flex-grow: 1 !important;">
+                <p style="color: white !important; font-size: 0.85em !important; line-height: 1.4 !important; white-space: pre-line !important;">Declaraciones de Impuestos:
+Preparar y presentar las declaraciones de impuestos requeridas por las autoridades fiscales, que pueden incluir impuestos sobre la renta, impuestos a las ventas, entre otros.
+Planificación Fiscal:
+Desarrollar estrategias para minimizar la carga fiscal de la empresa de manera legal y ética.
+Identificar oportunidades fiscales, créditos y deducciones aplicables.
+Cumplimiento Normativo:
+Asegurarse de que la empresa cumpla con todas las leyes fiscales y regulaciones locales, regionales y nacionales.
+Análisis de Legislación Fiscal:
+Monitorear y analizar los cambios en la legislación fiscal para evaluar su impacto en la empresa y ajustar estrategias en consecuencia.
+Provisión para Impuestos:
+Calcular y contabilizar las provisiones para impuestos diferidos y corrientes de acuerdo con los principios contables.
+Auditoría Fiscal:
+Preparar la documentación necesaria y colaborar con auditores externos durante auditorías fiscales.
+Asesoramiento a Otros Departamentos:
+Brindar asesoramiento a otros departamentos sobre cuestiones fiscales que puedan surgir en el curso de las operaciones de la empresa.
+Reporte de Impuestos a la Alta Dirección:
+Informar regularmente a la alta dirección sobre la situación fiscal de la empresa, así como sobre cualquier cambio en la legislación fiscal.
+Establecimiento de Políticas Fiscales Internas:
+Desarrollar y mantener políticas internas para garantizar el cumplimiento continuo de las obligaciones fiscales.
+Evaluación de Riesgos Fiscales:
+Identificar y evaluar los riesgos fiscales asociados con las actividades de la empresa y desarrollar estrategias de mitigación.
+Colaboración con Asesores Externos:
+Trabajar con asesores fiscales externos para obtener orientación especializada y asegurar el cumplimiento normativo.
+Capacitación del Personal:
+Proporcionar capacitación al personal de la empresa sobre aspectos fiscales relevantes para sus funciones.</p>
+            </div>
+        </div>
+
+        <div style="background-color: #002347 !important; padding: 15px !important; border-radius: 8px !important; width: 240px !important; height: 400px !important; border: 2px solid #c5a059 !important; box-shadow: 0 5px 15px rgba(0,0,0,0.4) !important; display: flex !important; flex-direction: column !important;">
+            <div style="font-size: 24px !important; margin-bottom: 8px !important;">👥</div>
+            <h4 style="color: #c5a059 !important; font-size: 1.1em !important; margin-bottom: 10px !important;">Nómina</h4>
+            <div style="overflow-y: auto !important; padding-right: 5px !important; text-align: left !important; flex-grow: 1 !important;">
+                <p style="color: white !important; font-size: 0.85em !important; line-height: 1.4 !important; white-space: pre-line !important;">Cálculo de Salarios y Beneficios:
+Calcular las remuneraciones, salarios y beneficios de los empleados de acuerdo con las políticas internas y las leyes laborales vigentes.
+Deducciones y Retenciones:
+Calcular y aplicar deducciones obligatorias, retenciones fiscales y contribuciones a la seguridad social.
+Procesamiento de Pagos:
+Generar cheques de pago o realizar transferencias electrónicas para depositar los salarios en las cuentas bancarias de los empleados.
+Cumplimiento Normativo:
+Garantizar el cumplimiento de las leyes laborales y fiscales relacionadas con la nómina, incluyendo la retención y presentación de impuestos.
+Gestión de Beneficios:
+Administrar y gestionar los beneficios proporcionados a los empleados, como seguro de salud, planes de jubilación, vacaciones pagadas y otros.
+Generación de Informes de Nómina:
+Crear informes detallados de nómina para la alta dirección y otros departamentos según sea necesario.
+Auditoría Interna de Nómina:
+Realizar auditorías internas periódicas para asegurar la precisión y la integridad de los registros de nómina.
+Cumplimiento con Requisitos de Información:
+Preparar y presentar informes e información requeridos por las autoridades fiscales y reguladoras.</p>
+            </div>
+        </div>
+
+        <div style="background-color: #002347 !important; padding: 15px !important; border-radius: 8px !important; width: 240px !important; height: 400px !important; border: 2px solid #c5a059 !important; box-shadow: 0 5px 15px rgba(0,0,0,0.4) !important; display: flex !important; flex-direction: column !important;">
+            <div style="font-size: 24px !important; margin-bottom: 8px !important;">🚀</div>
+            <h4 style="color: #c5a059 !important; font-size: 1.1em !important; margin-bottom: 10px !important;">Proyección Financiera</h4>
+            <div style="overflow-y: auto !important; padding-right: 5px !important; text-align: left !important; flex-grow: 1 !important;">
+                <p style="color: white !important; font-size: 0.85em !important; line-height: 1.4 !important; white-space: pre-line !important;">Planificación Estratégica:
+Proporcionar una visión anticipada de la situación financiera futura de la empresa, lo que ayuda en la toma de decisiones estratégicas y en la definición de metas y objetivos a largo plazo.
+Gestión de Recursos:
+Permitir una asignación eficiente de recursos financieros al anticipar las necesidades financieras y los flujos de efectivo esperados.
+Toma de Decisiones Informed:
+Proporcionar información crítica para la toma de decisiones informada, permitiendo a la dirección evaluar el impacto financiero de diferentes escenarios y opciones estratégicas.
+Evaluación de Riesgos y Oportunidades:
+Identificar posibles riesgos financieros y oportunidades, permitiendo a la empresa desarrollar estrategias para mitigar riesgos y capitalizar oportunidades.
+Comunicación con Inversionistas y Stakeholders:
+Brindar información transparente y confiable a inversores, accionistas y otros stakeholders interesados en la situación financiera futura de la empresa.
+Negociación con Acreedores:
+Facilitar la negociación con instituciones financieras y acreedores al proporcionar una visión clara de la capacidad de la empresa para cumplir con sus obligaciones financieras.
+Medición del Desempeño:
+Establecer métricas y benchmarks para medir el desempeño real de la empresa en comparación con las expectativas financieras proyectadas.
+Planificación de Inversiones y Financiamiento:
+Facilitar la planificación de inversiones y la búsqueda de financiamiento al proporcionar información sobre la capacidad de la empresa para generar flujos de efectivo y su necesidad de capital adicional.
+Seguimiento de Metas y Objetivos:
+Evaluar el progreso hacia metas y objetivos financieros establecidos, permitiendo ajustes en la estrategia según sea necesario.
+Gestión de Flujos de Efectivo:
+Ayudar en la gestión proactiva de los flujos de efectivo, identificando períodos de posibles excesos o déficits de efectivo.
+Evaluación de Rentabilidad:
+Evaluar la rentabilidad esperada de proyectos y operaciones futuras, apoyando la toma de decisiones sobre la viabilidad de inversiones y operaciones comerciales.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="servicios-especializados" style="background-color: #002347 !important; padding: 50px 20px !important; text-align: center !important; font-family: sans-serif !important; border: 5px solid #c5a059 !important;">
+    
+    <h2 style="color: #c5a059 !important; margin-bottom: 30px !important; font-size: 1.8em !important; border-left: 5px solid #c5a059 !important; padding-left: 15px !important; display: inline-block !important;">
+        Nuestros Servicios Especializados
+    </h2>
+
+    <div style="display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 20px !important; max-width: 1200px !important; margin: 0 auto !important;">
+        
+        <div style="background-color: #002347 !important; border: 3px solid #c5a059 !important; border-radius: 10px !important; width: 250px !important; overflow: hidden !important; box-shadow: 0 8px 20px rgba(0,0,0,0.5) !important;">
+            <img src="https://images.pexels.com/photos/6863515/pexels-photo-6863515.jpeg?auto=compress&cs=tinysrgb&w=500" style="width: 100% !important; height: 150px !important; object-fit: cover !important;">
+            <div style="padding: 15px !important;">
+                <h3 style="color: #c5a059 !important; font-size: 1.1em !important; margin-bottom: 10px !important;">Estrategias Fiscales</h3>
+                <p style="color: white !important; font-size: 0.85em !important; line-height: 1.4 !important;">Optimización de carga tributaria y gestión de riesgos.</p>
+            </div>
+        </div>
+
+        <div style="background-color: #002347 !important; border: 3px solid #c5a059 !important; border-radius: 10px !important; width: 250px !important; overflow: hidden !important; box-shadow: 0 8px 20px rgba(0,0,0,0.5) !important;">
+            <img src="https://images.pexels.com/photos/6476587/pexels-photo-6476587.jpeg?auto=compress&cs=tinysrgb&w=500" style="width: 100% !important; height: 150px !important; object-fit: cover !important;">
+            <div style="padding: 15px !important;">
+                <h3 style="color: #c5a059 !important; font-size: 1.1em !important; margin-bottom: 10px !important;">Plataformas Digitales</h3>
+                <p style="color: white !important; font-size: 0.85em !important; line-height: 1.4 !important;">Facturación y cumplimiento para negocios en línea.</p>
+            </div>
+        </div>
+
+        <div style="background-color: #002347 !important; border: 3px solid #c5a059 !important; border-radius: 10px !important; width: 250px !important; overflow: hidden !important; box-shadow: 0 8px 20px rgba(0,0,0,0.5) !important;">
+            <img src="https://images.pexels.com/photos/8112199/pexels-photo-8112199.jpeg?auto=compress&cs=tinysrgb&w=500" style="width: 100% !important; height: 150px !important; object-fit: cover !important;">
+            <div style="padding: 15px !important;">
+                <h3 style="color: #c5a059 !important; font-size: 1.1em !important; margin-bottom: 10px !important;">Pensiones Ley 73 y 97</h3>
+                <p style="color: white !important; font-size: 0.85em !important; line-height: 1.4 !important;">Asesoría en retiro, Modalidad 40 y planeación.</p>
+            </div>
+        </div>
+
+        <div style="background-color: #002347 !important; border: 3px solid #c5a059 !important; border-radius: 10px !important; width: 250px !important; overflow: hidden !important; box-shadow: 0 8px 20px rgba(0,0,0,0.5) !important;">
+            <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=500" style="width: 100% !important; height: 150px !important; object-fit: cover !important;">
+            <div style="padding: 15px !important;">
+                <h3 style="color: #c5a059 !important; font-size: 1.1em !important; margin-bottom: 10px !important;">Contabilidad y Nómina</h3>
+                <p style="color: white !important; font-size: 0.85em !important; line-height: 1.4 !important;">Gestión ante el SAT, IMSS y registros contables.</p>
+            </div>
+        </div>
+
+        <div style="background-color: #002347 !important; border: 3px solid #c5a059 !important; border-radius: 10px !important; width: 250px !important; overflow: hidden !important; box-shadow: 0 8px 20px rgba(0,0,0,0.5) !important;">
+            <img src="https://images.pexels.com/photos/3183131/pexels-photo-3183131.jpeg?auto=compress&cs=tinysrgb&w=500" style="width: 100% !important; height: 150px !important; object-fit: cover !important;">
+            <div style="padding: 15px !important;">
+                <h3 style="color: #c5a059 !important; font-size: 1.1em !important; margin-bottom: 10px !important;">Análisis de Datos</h3>
+                <p style="color: white !important; font-size: 0.85em !important; line-height: 1.4 !important;">Inteligencia de negocios para la toma de decisiones estratégicas.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section id="nosotros" style="padding: 40px 20px !important; background-color: #002347 !important; text-align: center !important; font-family: sans-serif !important; border: 5px solid #c5a059 !important;">
+    
+    <div style="max-width: 1100px !important; margin: 0 auto !important; background: #002347 !important; padding: 30px !important; border-radius: 8px !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; border: 3px solid #c5a059 !important;">
+        
+        <h2 style="color: #c5a059 !important; margin-bottom: 20px !important; border-left: 5px solid #c5a059 !important; padding-left: 15px !important; display: inline-block !important;">Filosofía Organizacional</h2>
+        
+        <p style="font-size: 1.1em !important; color: white !important; line-height: 1.8 !important;">
+           
+        </p>
+        
+        <p style="font-size: 1.1em !important; color: white !important; line-height: 1.8 !important; margin-top: 15px !important;">
+         
+        </p>
+        
+    </div>
+</section>
+
+<section style="padding: 40px 20px !important; background-color: #002347 !important; text-align: center !important; font-family: sans-serif !important; border: 5px solid #c5a059 !important;">
+    <div style="display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 20px !important; max-width: 1100px !important; margin: 0 auto !important;">
+        
+        <div style="background: #002347 !important; padding: 25px !important; border-radius: 8px !important; width: 280px !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; border: 3px solid #c5a059 !important;">
+            <div style="font-size: 30px !important; margin-bottom: 10px !important;">💡</div>
+            <h3 style="color: #c5a059 !important; margin: 10px 0 !important;">Innovación</h3>
+            <p style="color: white !important; font-size: 0.95em !important;">Aplicamos procesos y estrategias innovadores que permitan ayudar alcanzar los objetivos deseados.</p>
+        </div>
+
+        <div style="background: #002347 !important; padding: 25px !important; border-radius: 8px !important; width: 280px !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; border: 3px solid #c5a059 !important;">
+            <div style="font-size: 30px !important; margin-bottom: 10px !important;">🤝</div>
+            <h3 style="color: #c5a059 !important; margin: 10px 0 !important;">Sinergia</h3>
+            <p style="color: white !important; font-size: 0.95em !important;">Trabajando en equipo y acompañandote lograremos juntos nuestros objetivos.</p>
+        </div>
+
+        <div style="background: #002347 !important; padding: 25px !important; border-radius: 8px !important; width: 280px !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; border: 3px solid #c5a059 !important;">
+            <div style="font-size: 30px !important; margin-bottom: 10px !important;">💼</div>
+            <h3 style="color: #c5a059 !important; margin: 10px 0 !important;">Profesionalismo</h3>
+            <p style="color: white !important; font-size: 0.95em !important;">Trabajamos con amor, pasión y vocación.</p>
+        </div>
+
+        <div style="background: #002347 !important; padding: 25px !important; border-radius: 8px !important; width: 280px !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; border: 3px solid #c5a059 !important;">
+            <div style="font-size: 30px !important; margin-bottom: 10px !important;">🛡️</div>
+            <h3 style="color: #c5a059 !important; margin: 10px 0 !important;">Seguridad</h3>
+            <p style="color: white !important; font-size: 0.95em !important;">Sabemos lo que te has esforzado y cuidado tu patrimonio, es por ello que deseamos ser parte de tu crecimiento y bienestar.</p>
+        </div>
+
+        <div style="background: #002347 !important; padding: 25px !important; border-radius: 8px !important; width: 280px !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; border: 3px solid #c5a059 !important;">
+            <div style="font-size: 30px !important; margin-bottom: 10px !important;">🏠</div>
+            <h3 style="color: #c5a059 !important; margin: 10px 0 !important;">Familia</h3>
+            <p style="color: white !important; font-size: 0.95em !important;">Vemos a nuestros clientes como una familia y nos preocupamos por su bienestar y tranquilidad</p>
+        </div>
+
+        <div style="background: #002347 !important; padding: 25px !important; border-radius: 8px !important; width: 280px !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; border: 3px solid #c5a059 !important;">
+            <div style="font-size: 30px !important; margin-bottom: 10px !important;">📈</div>
+            <h3 style="color: #c5a059 !important; margin: 10px 0 !important;">Negociación</h3>
+            <p style="color: white !important; font-size: 0.95em !important;">Nos adaptamos a las necesidades de nuestros clientes</p>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section id="metodologia" style="padding: 40px 20px !important; background-color: #002347 !important; text-align: center !important; font-family: sans-serif !important; border: 5px solid #c5a059 !important;">
+    
+    <div style="max-width: 1100px !important; margin: 0 auto !important; background: #002347 !important; padding: 30px !important; border-radius: 8px !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; border: 3px solid #c5a059 !important;">
+        
+        <h2 style="color: #c5a059 !important; margin-bottom: 20px !important; border-left: 5px solid #c5a059 !important; padding-left: 15px !important; display: inline-block !important;">¿Cómo trabajamos?</h2>
+        
+        <p style="font-size: 1.1em !important; color: white !important; line-height: 1.8 !important;">
+            La consultoría basada al BI proporciona una visión objetiva y experiencia especializada para identificar áreas de mejora y oportunidades de crecimiento.
+        </p>
+        
+        <p style="font-size: 1.1em !important; color: white !important; line-height: 1.8 !important; margin-top: 15px !important;">
+            
+        </p>
+        
+    </div>
+</section>
+
+
+<section style="padding: 20px 20px 60px 20px !important; background-color: #002347 !important; text-align: center !important; font-family: sans-serif !important; border: 5px solid #c5a059 !important;">
+    <div style="display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 20px !important; max-width: 1100px !important; margin: 0 auto !important;">
+        
+        <div style="background: #002347 !important; padding: 25px !important; border-radius: 8px !important; width: 300px !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; border: 3px solid #c5a059 !important;">
+            <div style="font-size: 35px !important; margin-bottom: 10px !important;">📋</div>
+            <h3 style="color: #c5a059 !important; margin: 10px 0 !important;">Consultoría</h3>
+            <p style="color: white !important; font-size: 0.95em !important;">Acompañamos en el Análisis y Estudio micro hasta macroentorno de las empresas, buscando las áreas de oportunidad.</p>
+        </div>
+
+        <div style="background: #002347 !important; padding: 25px !important; border-radius: 8px !important; width: 300px !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; border: 3px solid #c5a059 !important;">
+            <div style="font-size: 35px !important; margin-bottom: 10px !important;">🎯</div>
+            <h3 style="color: #c5a059 !important; margin: 10px 0 !important;">Estrategia</h3>
+            <p style="color: white !important; font-size: 0.95em !important;">Evaluamos las estrategias correctas sin el menor riesgo, tomando en cuenta las tendencias y la normatividad aplicable.</p>
+        </div>
+
+        <div style="background: #002347 !important; padding: 25px !important; border-radius: 8px !important; width: 300px !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; border: 3px solid #c5a059 !important;">
+            <div style="font-size: 35px !important; margin-bottom: 10px !important;">⚡</div>
+            <h3 style="color: #c5a059 !important; margin: 10px 0 !important;">Acción</h3>
+            <p style="color: white !important; font-size: 0.95em !important;">Implementamos las herramientas y estratégias correctas para un mejor resultado aplicando el Businees Intelligence.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="liderazgo" style="background-color: #002347 !important; padding: 50px 20px !important; text-align: center !important; font-family: sans-serif !important; border: 5px solid #c5a059 !important;">
+    
+    <h2 style="color: #c5a059 !important; margin-bottom: 30px !important; font-size: 1.8em !important; border-left: 5px solid #c5a059 !important; padding-left: 15px !important; display: inline-block !important;"> Dirección y Liderazgo </h2>
+    
+    <div class="grid" style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important; gap: 30px !important; max-width: 1200px !important; margin: 0 auto !important;">
+        
+        <div class="card" style="background: #002347 !important; border-radius: 15px !important; overflow: hidden !important; border: 3px solid #c5a059 !important; box-shadow: 0 8px 20px rgba(0,0,0,0.5) !important;">
+            <div style="padding: 30px !important; text-align: center !important; background: #002347 !important; color: white !important;">
+                <img src="1000015470.jpeg.jpeg" alt="Cristian Orlando" style="width: 130px !important; height: 130px !important; border-radius: 50% !important; margin: 0 auto 15px !important; border: 3px solid #c5a059 !important; object-fit: cover !important; display: block !important;">
+                
+                <h3 style="color: #c5a059 !important;">Cristian Orlando García Cruz</h3>
+                <p style="font-size: 0.9rem !important; opacity: 0.9 !important;">CEO - Socio Fundador</p>
+            </div>
+            <div style="padding: 25px !important; text-align: left !important;">
+                <p style="font-weight: bold !important; color: #c5a059 !important; margin-bottom: 10px !important;">Lic. en Humanidades-Empresa</p>
+                <p style="font-size: 1rem !important; color: white !important; line-height: 1.6 !important;">
+                    Soy Licenciado en Humanidades-Empresa, egresado de la Universidad Estatal del Valle de Ecatepec cuento con experiencia en el área Administrativa y Financiera aplicada al Business Intelligence... Mi pasión y amor por compartir mis conocimientos y ver crecer las empresas me ha llevado a desempeñar puestos directivos en áreas administrativas y financieras; obteniendo experiencia en la Gestión empresarial, Finanzas, Planeación y Analisis de datos.
+                </p>
+            </div>
+        </div>
+
+    <div class="card" style="background: #002347 !important; border-radius: 15px !important; overflow: hidden !important; border: 3px solid #c5a059 !important; box-shadow: 0 8px 20px rgba(0,0,0,0.5) !important;">
+    <div style="padding: 30px !important; text-align: center !important; background: #002347 !important; color: white !important;">
+        
+        <div style="width: 120px !important; height: 120px !important; background: transparent !important; border-radius: 50% !important; margin: 0 auto 15px !important; border: 3px solid #c5a059 !important; display: flex !important; align-items: center !important; justify-content: center !important; color: #c5a059 !important;">
+            <svg viewBox="0 0 24 24" style="width: 70px; height: 70px; fill: currentColor;">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+        </div>
+
+        <h3 style="color: #c5a059 !important;">Arturo López Ojeda</h3>
+        <p style="font-size: 0.9rem !important; opacity: 0.9 !important;">CEO - Socio Fundador</p>
+    </div>
+    
+    <div style="padding: 25px !important; text-align: left !important;">
+        <p style="font-weight: bold !important; color: #c5a059 !important; margin-bottom: 10px !important;">Lic. en Administración / Fiscalista</p>
+        <p style="font-size: 1rem !important; color: white !important; line-height: 1.6 !important;">
+            Soy licenciado en Administración de Empresas enfocado a la contabilidad y nómina, certificado en el manejo de Sistemas Aspel COI (contabilidad integral) y NOI (Nómina integral), sistemas de facturación DIGIFACT, SAT. Me he desarrollado en el área contable con mas de 7 años de experiencia en la maquila de contabilidad... altas, bajas, modificaciones de salario, incidencias, SIPARE, IDSE, buzón del IMSS, Secretaría de Finanzas CDMX.
+        </p>
+    </div>
+</div>    
+
+    </div>
+</section>
+
+
+<h2 style="color: #c5a059 !important; margin-bottom: 30px !important; font-size: 1.8em !important; border-left: 5px solid #c5a059 !important; padding-left: 15px !important; display: inline-block !important; font-family: sans-serif !important; margin-top:50px !important;">
+    Nuestra Trayectoria
+</h2>
+
+<section id="trayectoria" style="background: #002347 !important; padding: 50px 20px !important; border-radius: 15px !important; color: white !important; text-align: center !important; box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important; border: 5px solid #c5a059 !important; font-family: sans-serif !important;">
+    <div style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important; gap: 30px !important;">
+        
+        <div style="padding: 20px !important; border-right: 2px solid rgba(197, 160, 89, 0.5) !important;">
+            <div style="font-size: 3rem !important; color: #c5a059 !important; font-weight: bold !important; margin-bottom: 10px !important;">5+</div>
+            <h4 style="text-transform: uppercase !important; letter-spacing: 1px !important; font-size: 0.9rem !important; color: white !important;">A&ntilde;os de Experiencia</h4>
+            <p style="font-size: 0.8rem !important; margin-top: 10px !important; color: white !important;">Conocimiento integral en el sector fiscal y administrativo.</p>
+        </div>
+
+        <div style="padding: 20px !important; border-right: 2px solid rgba(197, 160, 89, 0.5) !important;">
+            <div style="font-size: 3rem !important; color: #c5a059 !important; font-weight: bold !important; margin-bottom: 10px !important;">+8</div>
+            <h4 style="text-transform: uppercase !important; letter-spacing: 1px !important; font-size: 0.9rem !important; color: white !important;">Clientes Felices</h4>
+            <p style="font-size: 0.8rem !important; margin-top: 10px !important; color: white !important;">Empresas que conf&iacute;an en nuestros resultados diarios.</p>
+        </div>
+
+        <div style="padding: 20px !important; border-right: 2px solid rgba(197, 160, 89, 0.5) !important;">
+            <div style="font-size: 3rem !important; color: #c5a059 !important; font-weight: bold !important; margin-bottom: 10px !important;">2</div>
+            <h4 style="text-transform: uppercase !important; letter-spacing: 1px !important; font-size: 0.9rem !important; color: white !important;">Oficinas F&iacute;sicas</h4>
+            <p style="font-size: 0.8rem !important; margin-top: 10px !important; color: white !important;">Presencia en CDMX y el Estado de M&eacute;xico.</p>
+        </div>
+
+        <div style="padding: 20px !important;">
+            <div style="font-size: 3rem !important; color: #c5a059 !important; font-weight: bold !important; margin-bottom: 10px !important;">🤝</div>
+            <h4 style="text-transform: uppercase !important; letter-spacing: 1px !important; font-size: 0.9rem !important; color: white !important;">Socios Estrategas</h4>
+            <p style="font-size: 0.8rem !important; margin-top: 10px !important; color: white !important;">Alianzas clave para potenciar tu crecimiento.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="certificaciones" style="background-color: #002347 !important; padding: 50px 20px !important; text-align: center !important; font-family: sans-serif !important; border: 5px solid #c5a059 !important;">
+    
+    <h2 style="color: #c5a059 !important; margin-bottom: 30px !important; font-size: 1.8em !important; border-left: 5px solid #c5a059 !important; padding-left: 15px !important; display: inline-block !important;">
+        Certificaciones y Especializaciones
+    </h2>
+
+    <div class="grid" style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; gap: 20px !important; max-width: 1200px !important; margin: 0 auto 50px !important;">
+        
+        <div style="background: #002347 !important; padding: 20px !important; border-radius: 12px !important; border: 3px solid #c5a059 !important; box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important; text-align: center !important;">
+            <img src="1000015422.png.png" alt="Aspel" style="height: 60px !important; margin-bottom: 15px !important;">
+            <h4 style="color: #c5a059 !important; margin-bottom: 5px !important;">Certificación Aspel</h4>
+            <p style="font-size: 0.85rem !important; color: white !important;">Sistemas de Gesti&oacute;n</p>
+        </div>
+
+        <div style="background: #002347 !important; padding: 20px !important; border-radius: 12px !important; border: 3px solid #c5a059 !important; box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important; text-align: center !important;">
+            <img src="1000015423.png.png" alt="BBVA" style="height: 60px !important; margin-bottom: 15px !important;">
+            <h4 style="color: #c5a059 !important; margin-bottom: 5px !important;">Business Analytics</h4>
+            <p style="font-size: 0.85rem !important; color: white !important;">Estrategia de Datos</p>
+        </div>
+
+        <div style="background: #002347 !important; padding: 20px !important; border-radius: 12px !important; border: 3px solid #c5a059 !important; box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important; text-align: center !important;">
+            <img src="1000015424.png.png" alt="UC" style="height: 60px !important; margin-bottom: 15px !important;">
+            <h4 style="color: #c5a059 !important; margin-bottom: 5px !important;">Administración ágil de proyectos</h4>
+            <p style="font-size: 0.85rem !important; color: white !important;">Metodolog&iacute;as Agiles</p>
+        </div>
+
+        <div style="background: #002347 !important; padding: 20px !important; border-radius: 12px !important; border: 3px solid #c5a059 !important; box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important; text-align: center !important;">
+            <img src="1000015425.png.png" alt="TICs" style="height: 60px !important; margin-bottom: 15px !important;">
+            <h4 style="color: #c5a059 !important; margin-bottom: 5px !important;">Perfeccionamiento de las TIC’S</h4>
+            <p style="font-size: 0.85rem !important; color: white !important;">Aplicada en los Negocios</p>
+        </div>
+
+        <div style="background: #002347 !important; padding: 20px !important; border-radius: 12px !important; border: 3px solid #c5a059 !important; box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important; text-align: center !important;">
+            <img src="1000015426.jpg.jpg" alt="UNAM" style="height: 60px !important; margin-bottom: 15px !important;">
+            <h4 style="color: #c5a059 !important; margin-bottom: 5px !important;">Finanzas Corporativas</h4>
+            <p style="font-size: 0.85rem !important; color: white !important;">An&aacute;lisis Financiero UNAM</p>
+        </div>
+
+        <div style="background: #002347 !important; padding: 20px !important; border-radius: 12px !important; border: 3px solid #c5a059 !important; box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important; text-align: center !important;">
+            <img src="1000015429.png.png" alt="Tec de Monterrey" style="height: 60px !important; margin-bottom: 15px !important;">
+            <h4 style="color: #c5a059 !important; margin-bottom: 5px !important;">Tec de Monterrey</h4>
+            <p style="font-size: 0.85rem !important; color: white !important;">Análisis y Visualización de datos</p>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    /* Estilos mejorados para que combinen con el fondo oscuro */
+    .area-card { 
+        overflow: hidden; 
+        transition: all 0.3s ease; 
+        background: #002347 !important; 
+        border-radius: 15px; 
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        display: flex;
+        flex-direction: column;
+        border: 2px solid #c5a059 !important; 
+    }
+    .area-card:hover { 
+        transform: translateY(-8px); 
+        box-shadow: 0 12px 25px rgba(197,160,89,0.3); /* Resplandor dorado al pasar el mouse */
+        border-color: #ffffff !important;
+    }
+    .img-principal-box {
+        margin: 0 auto 40px; 
+        max-width: 850px; 
+        overflow: hidden; 
+        border-radius: 20px; 
+        border: 4px solid #c5a059 !important; 
+    }
+</style>
+
+<section id="areas-conocimiento" style="padding: 60px 20px !important; background-color: #002347 !important; font-family: sans-serif !important; text-align: center !important; border: 5px solid #c5a059 !important;">
+    
+    <h2 style="color: #c5a059 !important; font-size: 1.8rem !important; margin-bottom: 10px !important;">Áreas de Conocimiento Especializado</h2>
+    <div style="width: 80px !important; height: 4px !important; background: #c5a059 !important; margin: 0 auto 30px !important;"></div>
+    
+    <div style="margin: 0 auto 30px !important; max-width: 850px !important; overflow: hidden !important; border-radius: 20px !important; border: 3px solid #c5a059 !important; box-shadow: 0 5px 15px rgba(0,0,0,0.5) !important;">
+        <img src="https://images.pexels.com/photos/3183151/pexels-photo-3183151.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+             style="width: 100% !important; height: 350px !important; object-fit: cover !important; display: block !important;" 
+             alt="Consultoría Corporativa">
+    </div>
+
+    <div style="max-width: 800px !important; margin: 0 auto 40px !important; padding: 15px !important;">
+        <h3 style="color: #c5a059 !important; margin-bottom: 10px !important;">Excelencia en Consultoría Integral</h3>
+        <p style="color: white !important; font-size: 1.1rem !important; line-height: 1.6 !important; font-style: italic !important;">
+            "En OA Consulting Solutions, transformamos el conocimiento técnico en resultados estratégicos, brindando soporte especializado en cada pilar fundamental de su organización."
+        </p>
+    </div>
+
+    <div style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; gap: 30px !important; max-width: 1200px !important; margin: 0 auto !important; text-align: left !important; align-items: start !important;">
+        
+        <style>
+            .area-card-full {
+                background: #002347 !important;
+                border: 2px solid #c5a059 !important;
+                border-radius: 15px !important;
+                overflow: hidden !important;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+                display: flex !important;
+                flex-direction: column !important;
+                height: 100% !important;
+            }
+            .area-card-full img { width: 100% !important; height: 180px !important; object-fit: cover !important; }
+            .area-card-content { padding: 20px !important; }
+            .area-card-full h4 { color: #c5a059 !important; margin-bottom: 12px !important; border-bottom: 2px solid rgba(197,160,89,0.3) !important; padding-bottom: 5px !important; font-size: 1.1rem !important; }
+            .area-card-full p { color: white !important; font-size: 0.9rem !important; line-height: 1.6 !important; margin: 0 !important; }
+        </style>
+
+        <div class="area-card-full">
+            <img src="https://images.pexels.com/photos/3182759/pexels-photo-3182759.jpeg?auto=compress&cs=tinysrgb&w=400">
+            <div class="area-card-content">
+                <h4>Planeación Estratégica</h4>
+                <p>Proceso sistemático y continuo mediante el cual una organización define su dirección a largo plazo, establece sus objetivos y desarrolla estrategias para alcanzarlos.</p>
+            </div>
+        </div>
+
+        <div class="area-card-full">
+            <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=400">
+            <div class="area-card-content">
+                <h4>Análisis de Datos</h4>
+                <p>Este enfoque implica aplicar diversas técnicas y herramientas estadísticas, matemáticas y computacionales para extraer conocimientos significativos de conjuntos de datos, revelando patrones, tendencias o insights que pueden tener un impacto directo en la eficiencia, la innovación y la toma de decisiones estratégicas dentro de una organización.</p>
+            </div>
+        </div>
+
+        <div class="area-card-full">
+            <img src="https://images.pexels.com/photos/164686/pexels-photo-164686.jpeg?auto=compress&cs=tinysrgb&w=400">
+            <div class="area-card-content">
+                <h4>Contabilidad Financiera</h4>
+                <p>La contabilidad financiera implica el registro, la clasificación y la interpretación de la información financiera de una entidad con el objetivo de proporcionar informes precisos y comprensibles para usuarios externos, como inversionistas, acreedores, reguladores y otros interesados.</p>
+            </div>
+        </div>
+
+        <div class="area-card-full">
+            <img src="https://images.pexels.com/photos/6863246/pexels-photo-6863246.jpeg?auto=compress&cs=tinysrgb&w=400">
+            <div class="area-card-content">
+                <h4>Impuestos</h4>
+                <p>Gestionar y cumplir con las obligaciones fiscales, así como de optimizar la carga tributaria de la organización. Las actividades del área de impuestos pueden variar según la naturaleza y el tamaño de la empresa, así como las leyes fiscales locales.</p>
+            </div>
+        </div>
+
+        <div class="area-card-full">
+            <img src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=400">
+            <div class="area-card-content">
+                <h4>Nómina</h4>
+                <p>Administrar, elaborar y procesar la remuneración de los empleados, así como de garantizar el cumplimiento de las obligaciones relacionadas con la nómina y los beneficios.</p>
+            </div>
+        </div>
+
+        <div class="area-card-full">
+            <img src="https://images.pexels.com/photos/1181395/pexels-photo-1181395.jpeg?auto=compress&cs=tinysrgb&w=400">
+            <div class="area-card-content">
+                <h4>Gobierno Corporativo</h4>
+                <p>Equilibrar los intereses de los diferentes grupos involucrados en una empresa, como la dirección ejecutiva, los accionistas, los empleados, los clientes y la sociedad en general. Este marco proporciona una estructura que promueve la ética empresarial, la gestión eficiente y la mitigación de riesgos, contribuyendo así a la sostenibilidad y el éxito a largo plazo de la organización.</p>
+            </div>
+        </div>
+
+        <div class="area-card-full">
+            <img src="https://images.pexels.com/photos/53621/calculator-calculation-insurance-finance-53621.jpeg?auto=compress&cs=tinysrgb&w=400">
+            <div class="area-card-content">
+                <h4>Presupuestación</h4>
+                <p>Planificar, coordinar y controlar los ingresos y egresos relacionadas con la actividad de la empresa y gestionarlos de manera eficiente y efectiva, desarrollando planes financieros detallados que reflejen las metas y objetivos de la organización, asignando los recursos necesarios para su funcionamiento.</p>
+            </div>
+        </div>
+
+        <div class="area-card-full">
+            <img src="https://images.pexels.com/photos/7567529/pexels-photo-7567529.jpeg?auto=compress&cs=tinysrgb&w=400">
+            <div class="area-card-content">
+                <h4>Proyección Financiera</h4>
+                <p>Es una herramienta esencial para la gestión empresarial, ya que proporciona una visión anticipada y estructurada del rendimiento financiero futuro, permitiendo a la empresa tomar decisiones informadas y planificar estratégicamente su crecimiento y sostenibilidad a largo plazo.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="socios" style="margin-top: 50px !important; padding: 40px 20px !important; background-color: #002347 !important; font-family: Arial, sans-serif !important; text-align: center !important; border: 5px solid #c5a059 !important;">
+    
+    <div style="margin-bottom: 25px !important;">
+        <h2 id="nuestros-socios" style="color: #c5a059 !important; font-size: 1.8rem !important; margin-bottom: 8px !important; border-left: 5px solid #c5a059 !important; padding-left: 15px !important; display: inline-block !important;">Nuestros Socios Estratégicos</h2>
+        <div style="width: 60px !important; height: 3px !important; background: #c5a059 !important; margin: 0 auto !important;"></div>
+    </div>
+
+    <div style="max-width: 700px !important; margin: 0 auto 30px !important; padding: 0 20px !important;">
+        <p style="color: white !important; font-size: 1rem !important; line-height: 1.5 !important; opacity: 0.9 !important;">
+            Sabemos que lo importante es crear alianzas para ofrecer a nuestros clientes el mejor servicio, es por ello que nos emociona compartir algunos de nuestros socios mas importantes.
+        </p>
+    </div>
+
+    <style>
+        .socio-card-oa-mini {
+            overflow: hidden !important;
+            transition: all 0.4s ease !important;
+            background: #002347 !important;
+            border-radius: 12px !important;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
+            width: 100% !important;
+            max-width: 300px !important; 
+            border: 2px solid #c5a059 !important;
+            text-align: left !important;
+        }
+        .socio-card-oa-mini img {
+            width: 100% !important;
+            height: 140px !important; 
+            object-fit: contain !important; 
+            background-color: #ffffff !important; 
+            padding: 15px !important;
+            display: block !important;
+        }
+        .socio-card-oa-mini:hover {
+            transform: translateY(-8px) !important;
+            border-color: white !important;
+        }
+        .socio-info-mini {
+            padding: 18px !important;
+        }
+    </style>
+
+    <div style="display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 25px !important; max-width: 1000px !important; margin: 0 auto !important;">
+        
+        <div class="socio-card-oa-mini">
+            <img src="1000015543.jpeg.jpeg" alt="Despacho MAYA">
+            <div class="socio-info-mini">
+                <h4 style="color: #c5a059 !important; font-size: 1rem !important; margin: 0 0 10px 0 !important; border-left: 3px solid #c5a059 !important; padding-left: 10px !important;">
+                    Despacho Administrativo y Contable MAYA
+                </h4>
+                <p style="color: white !important; font-size: 0.85rem !important; line-height: 1.5 !important;">
+                    Aliados expertos en la optimización de procesos administrativos y cumplimiento contable de alta precisión.
+                </p>
+            </div>
+        </div>
+
+        <div class="socio-card-oa-mini">
+            <img src="1000015544.jpeg.jpeg" alt="Consultoría EEMIA4S">
+            <div class="socio-info-mini">
+                <h4 style="color: #c5a059 !important; font-size: 1rem !important; margin: 0 0 10px 0 !important; border-left: 3px solid #c5a059 !important; padding-left: 10px !important;">
+                    Consultoría y Gestoría EEMIA4S S de R.L. de C.V.
+                </h4>
+                <p style="color: white !important; font-size: 0.85rem !important; line-height: 1.5 !important;">
+                    Especialistas en soluciones de gestoría empresarial y consultoría legal para la formalización y éxito de negocios.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<h2 id="ubicacion" style="margin-top:50px !important; color: #c5a059 !important; font-family: sans-serif !important; border-left: 5px solid #c5a059 !important; padding-left: 15px !important; display: inline-block !important;">Presencia Estratégica</h2>
+
+<div style="background: #002347 !important; padding: 30px !important; border-radius: 15px !important; box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important; border: 5px solid #c5a059 !important; display: grid !important; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important; gap: 20px !important; font-family: sans-serif !important;">
+    
+    <a href="https://www.google.com/maps/search/?api=1&query=Av.+Insurgentes+Centro+1271,+Extremadura+Insurgentes,+Benito+Juárez,+03740+Ciudad+de+México" target="_blank" style="text-decoration: none !important; color: inherit !important;">
+        <div style="border: 2px solid #c5a059 !important; padding: 20px !important; border-radius: 10px !important; transition: 0.3s !important; background: rgba(255,255,255,0.05) !important;" onmouseover="this.style.background='rgba(197, 160, 89, 0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+            <h4 style="color: #c5a059 !important; margin-bottom: 10px !important;">
+                <i class="fas fa-map-marker-alt" style="color: #1877F2 !important;"></i> Sede CDMX
+            </h4>
+            <p style="font-size: 14px !important; color: white !important; line-height: 1.5 !important;">
+                Av. Insurgentes Centro 1271, Extremadura Insurgentes, Benito Juárez, CDMX.
+            </p>
+            <span style="font-size: 12px !important; color: #1877F2 !important; font-weight: bold !important;">Ver ubicación exacta →</span>
+        </div>
+    </a>
+
+    <a href="https://www.google.com/maps/search/?api=1&query=19.634421,-98.994194" target="_blank" style="text-decoration: none !important; color: inherit !important;">
+        <div style="border: 2px solid #c5a059 !important; padding: 20px !important; border-radius: 10px !important; transition: 0.3s !important; background: rgba(255,255,255,0.05) !important;" onmouseover="this.style.background='rgba(197, 160, 89, 0.1)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+            <h4 style="color: #c5a059 !important; margin-bottom: 10px !important;">
+                <i class="fas fa-map-marker-alt" style="color: #25D366 !important;"></i> Sede Edo. Méx.
+            </h4>
+            <p style="font-size: 14px !important; color: white !important; line-height: 1.5 !important;">
+                Ecatepec de Morelos, Col. Ciudad Cuauhtémoc (Punto Estratégico).
+            </p>
+            <span style="font-size: 12px !important; color: #25D366 !important; font-weight: bold !important;">Abrir en GPS →</span>
+        </div>
+    </a>
+
+</div>
+
+
+<!-- MAPA INTERACTIVO (SIN BORRAR TUS SEDES) -->
+<div style="margin-top: 30px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.514757523674!2d-99.17646692396112!3d19.390176881881766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff73e6e3c93b%3A0x6b86064f772e50!2sAv.%20Insurgentes%20Sur%201271%2C%20Extremadura%20Insurgentes%2C%20Benito%20Ju%C3%A1rez%2C%2003740%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1715650000000!5m2!1ses-419!2smx" 
+        width="100%" 
+        height="400" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+<div id="contacto" style="background: #002347 !important; padding: 25px 15px !important; border: 4px solid #c5a059 !important; border-radius: 12px !important; text-align: center !important; font-family: sans-serif !important; max-width: 900px !important; margin: 20px auto !important;">
+    
+    <h2 style="color: #c5a059 !important; font-size: 1.5rem !important; margin-bottom: 10px !important; border-left: 4px solid #c5a059 !important; padding-left: 12px !important; display: inline-block !important;">
+        Contáctanos
+    </h2>
+
+    <p style="color: white !important; max-width: 600px !important; margin: 0 auto 20px !important; font-size: 0.95rem !important; line-height: 1.4 !important; opacity: 0.9 !important;">
+        Estamos listos para impulsar tu proyecto. Elige el medio de tu preferencia y recibe atención profesional inmediata de nuestro equipo de expertos.
+    </p>
+
+    <div style="display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 15px !important;">
+        
+        <style>
+            .btn-oa-compact {
+                transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+                text-decoration: none !important;
+                display: block !important;
+                flex: 1 !important;
+                min-width: 260px !important;
+                max-width: 300px !important;
+            }
+            .btn-oa-compact:hover {
+                transform: scale(1.05) !important;
+                box-shadow: 0 8px 20px rgba(197, 160, 89, 0.3) !important;
+            }
+        </style>
+
+        <a href="https://wa.me/5215512905938" target="_blank" class="btn-oa-compact">
+            <div style="background: rgba(37, 211, 102, 0.08) !important; border: 2px solid #25D366 !important; padding: 15px !important; border-radius: 10px !important; text-align: center !important;">
+                <h4 style="color: #25D366 !important; margin-bottom: 5px !important; font-size: 1.1rem !important;">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Directo
+                </h4>
+                <p style="font-size: 13px !important; color: white !important; line-height: 1.4 !important; margin-bottom: 8px !important;">
+                    Atención inmediata y asesoría técnica personalizada para tu negocio.
+                </p>
+                <b style="color: #25D366 !important; font-size: 11px !important; text-transform: uppercase !important;">Escribir ahora →</b>
+            </div>
+        </a>
+
+        <a href="mailto:orlandogc@oaconsultingsolutions.net" class="btn-oa-compact">
+            <div style="background: rgba(197, 160, 89, 0.08) !important; border: 2px solid #c5a059 !important; padding: 15px !important; border-radius: 10px !important; text-align: center !important;">
+                <h4 style="color: #c5a059 !important; margin-bottom: 5px !important; font-size: 1.1rem !important;">
+                    <i class="fas fa-envelope"></i> Correo Electrónico
+                </h4>
+                <p style="font-size: 13px !important; color: white !important; line-height: 1.4 !important; margin-bottom: 8px !important;">
+                    Envíanos tus dudas, requerimientos o documentación fiscal.
+                </p>
+                <b style="color: #c5a059 !important; font-size: 11px !important; text-transform: uppercase !important;">Enviar correo →</b>
+            </div>
+        </a>
+
+    </div>
+</div>
+
+
+
+<footer style="background-color: #002347; color: white; padding: 20px; text-align: center; border-top: 5px solid #c5a059;">
+    <img src="1000015245_3.jpeg.jpeg" alt="Logo OA Footer" style="width: 100px; height: auto; opacity: 0.8;">
+    <p>&copy; 2026 OA Consulting Solutions. Todos los derechos reservados.</p>
+
+<div style="margin-top: 20px; text-align: center;">
+    <p style="color: white; font-family: Arial, sans-serif; font-size: 16px; margin-bottom: 15px;">Síguenos en nuestras redes:</p>
+    
+    <a href="#" style="color: white; text-decoration: none; margin: 0 15px; font-size: 24px;">
+        <i class="fab fa-facebook" style="color: #1877F2;"></i>
+    </a>
+    
+    <a href="#" style="color: white; text-decoration: none; margin: 0 15px; font-size: 24px;">
+        <i class="fab fa-linkedin" style="color: #0A66C2;"></i>
+    </a>
+    
+    <a href="https://wa.me/tu-numero" style="color: white; text-decoration: none; margin: 0 15px; font-size: 24px;">
+        <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+    </a>
+</div>
+</footer>
+
+
+</footer>
+
+<!-- GLOBO FLOTANTE DE WHATSAPP INTEGRADO -->
+<a href="https://wa.me/525643748587" target="_blank" style="position: fixed; bottom: 30px; right: 30px; background-color: #25D366; color: white; padding: 15px; border-radius: 50%; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
