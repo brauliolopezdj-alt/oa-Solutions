@@ -3,55 +3,49 @@
 <head>
 
 <style>
-    /* Mantengo exactamente lo que ya tenías */
     @media (max-width: 768px) {
-        
+        /* Reducimos el tamaño de letra general */
+        html {
+            font-size: 14px !important;
+        }
+
         .container, section, header {
             width: 100% !important;
-            max-width: 100% !important;
-            margin: 10px 0 !important;
-            box-sizing: border-box !important;
+            padding: 5px !important; /* Menos espacio muerto a los lados */
+            margin: 5px 0 !important;
         }
 
-        div[style*="display: grid"], 
-        .grid {
-            grid-template-columns: 1fr !important;
-            gap: 20px !important;
+        /* Hacemos las tarjetas más delgadas y menos altas */
+        .card, .area-card-full, .socio-card-oa-mini {
+            padding: 10px !important;
+            margin-bottom: 10px !important;
+            width: 95% !important; /* Que no pegue al borde total */
+            margin-left: auto !important;
+            margin-right: auto !important;
         }
 
-        div[style*="display: flex"] {
-            flex-direction: column !important;
-            align-items: center !important;
-            gap: 15px !important; /* Añadí esto para que los botones no se peguen */
+        /* Ajustamos los títulos para que no ocupen media pantalla */
+        h1 { font-size: 1.6rem !important; }
+        h2 { font-size: 1.3rem !important; margin-top: 10px !important; }
+        h3 { font-size: 1.1rem !important; }
+
+        /* Los botones más chaparritos */
+        .btn-oa-compact {
+            padding: 8px 15px !important;
+            font-size: 0.9rem !important;
         }
 
-        .card, .area-card-full, .socio-card-oa-mini, .btn-oa-compact {
-            max-width: 100% !important;
-            width: 100% !important;
-            margin-bottom: 15px !important; /* Esto separa las tarjetas hacia abajo */
-        }
-
-        section, div {
-            padding-left: 15px !important; /* Un poquito más de espacio a los lados */
-            padding-right: 15px !important;
-        }
-
-        h2 {
-            font-size: 1.5rem !important;
-            text-align: center !important; /* Centré los títulos para que luzcan más */
-        }
-
+        /* Forzamos a que las imágenes no se desborden */
         img {
+            max-width: 90% !important;
             height: auto !important;
-            max-width: 100% !important;
-            border-radius: 8px !important; /* Le da un toque más limpio a las fotos */
+            display: block !important;
+            margin: 0 auto !important;
         }
 
-        /* AJUSTE EXTRA: Para que los textos no se vean pegados al borde */
-        p, span, li {
-            text-align: left !important;
-            font-size: 1rem !important;
-            line-height: 1.4 !important;
+        /* Si hay iconos o logos, que se hagan chiquitos */
+        .logo, .icon {
+            max-width: 150px !important;
         }
     }
 </style>
