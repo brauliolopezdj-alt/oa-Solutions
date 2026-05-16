@@ -3,10 +3,9 @@
 <head>
 
 <style>
-    /* Esto es lo que hace la magia en celulares */
+    /* Mantengo exactamente lo que ya tenías */
     @media (max-width: 768px) {
         
-        /* METÍ ESTO AQUÍ ADENTRO PARA QUE NO SE VEA GRANDE EN PC */
         .container, section, header {
             width: 100% !important;
             max-width: 100% !important;
@@ -14,39 +13,45 @@
             box-sizing: border-box !important;
         }
 
-        /* Fuerza a que todas las cuadrículas sean de 1 sola columna */
         div[style*="display: grid"], 
         .grid {
             grid-template-columns: 1fr !important;
             gap: 20px !important;
         }
 
-        /* Ajusta el contenedor de los botones de contacto */
         div[style*="display: flex"] {
             flex-direction: column !important;
             align-items: center !important;
+            gap: 15px !important; /* Añadí esto para que los botones no se peguen */
         }
 
-        /* Evita que las tarjetas o botones se vean gigantes o se corten */
         .card, .area-card-full, .socio-card-oa-mini, .btn-oa-compact {
             max-width: 100% !important;
             width: 100% !important;
+            margin-bottom: 15px !important; /* Esto separa las tarjetas hacia abajo */
         }
 
-        /* Ajusta los textos y padding para que no se peguen a la orilla */
         section, div {
-            padding-left: 10px !important;
-            padding-right: 10px !important;
+            padding-left: 15px !important; /* Un poquito más de espacio a los lados */
+            padding-right: 15px !important;
         }
 
         h2 {
             font-size: 1.5rem !important;
+            text-align: center !important; /* Centré los títulos para que luzcan más */
         }
 
-        /* Ajusta las imágenes de trayectoria y áreas de conocimiento */
         img {
             height: auto !important;
             max-width: 100% !important;
+            border-radius: 8px !important; /* Le da un toque más limpio a las fotos */
+        }
+
+        /* AJUSTE EXTRA: Para que los textos no se vean pegados al borde */
+        p, span, li {
+            text-align: left !important;
+            font-size: 1rem !important;
+            line-height: 1.4 !important;
         }
     }
 </style>
