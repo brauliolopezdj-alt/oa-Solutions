@@ -184,32 +184,37 @@ html { scroll-behavior: smooth; }
     max-width: 1100px;
   }
 
-/* --- CORRECCIÓN TOTAL PARA ORLANDO --- */
+/* --- TRUCO PARA FORZAR CAMBIOS DE ORLANDO --- */
 
-/* 1. Fondo transparente y desenfoque (Audio 1) */
-section {
+/* 1. Forzamos el fondo con transparencia y blur */
+html body section, 
+html body .Sección {
     background-color: rgba(0, 31, 63, 0.5) !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
 }
 
-/* 2. Arreglar Socios y quitar el desacomodo (Audio 2) */
-.socio-card-oa-mini {
-    background-color: #FFFFFF !important;
-    border-radius: 12px !important;
-    padding: 20px !important;
-    display: inline-block !important; /* Esto evita que se amontonen */
+/* 2. Forzamos que los socios se vean bien y no se amontonen */
+html body .socio-card-oa-mini {
+    background-color: #ffffff !important;
+    border-radius: 15px !important;
+    padding: 25px !important;
+    margin: 15px !important;
+    display: inline-block !important;
+    width: 320px !important;
     vertical-align: top !important;
-    margin: 10px !important;
-    width: 350px !important; /* Ajuste para que no se vea flaco */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
 }
 
-.socio-card-oa-mini img {
-    width: 150px !important;
+/* 3. Forzamos el tamaño de los logos de los socios */
+html body .socio-card-oa-mini img,
+html body .socio-card-oa-mini IMG {
+    width: 160px !important;
     height: auto !important;
+    max-height: 100px !important;
     display: block !important;
     margin: 0 auto 15px !important;
+    object-fit: contain !important;
 }
     
 </style>
