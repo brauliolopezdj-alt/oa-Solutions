@@ -3,9 +3,11 @@
 <head>
 
 <style>
-  /* --- CÓDIGO RECONECTADO: ESTO REVIVE TU DISEÑO --- */
 
-/* 1. FONDO DE EDIFICIOS */
+
+/* --- CÓDIGO MAESTRO COMPLETO (OA SOLUTIONS) --- */
+
+/* 1. FONDO Y CUERPO */
 body {
     background-image: url('https://brauliolopezdj-alt.github.io/oa-Solutions/edificios.jpg');
     background-attachment: fixed;
@@ -13,60 +15,111 @@ body {
     background-position: center;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #ffffff;
 }
 
-/* 2. EL AZUL TRANSPARENTE (LO QUE TE PIDIÓ ORLANDO) */
+/* 2. REPARACIÓN DEL MENÚ HAMBURGUESA */
+header {
+    background-color: #001f3f;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Menú para celulares */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Se oculta para usar el botón hamburguesa */
+    }
+    .hamburguesa { /* Tu botón de menú */
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+    }
+}
+
+/* 3. EL COLOR AZUL TRANSPARENTE (GLASS) */
 section, .Sección {
     background-color: rgba(0, 31, 63, 0.7) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 60px 20px !important;
     text-align: center;
-    min-height: 400px;
 }
 
-/* 3. TÍTULOS */
-h1, h2 {
-    color: #ffffff !important;
-    text-align: center;
-}
-
-/* 4. TUS TARJETAS (ESTO ES LO QUE SE VEÍA BLANCO) */
-/* Usamos los nombres exactos de tu código: socio-card-oa */
-.socio-card-oa, .socio-card-oa-mini {
+/* 4. TARJETAS DE SOCIOS Y PRESENTACIÓN */
+.socio-card-oa, .socio-card-oa-mini, .tarjeta-presentacion {
     background-color: #ffffff !important;
     display: inline-block !important;
     width: 280px !important;
     margin: 15px !important;
-    padding: 25px !important;
-    border-radius: 15px !important;
+    padding: 30px !important;
+    border-radius: 20px !important;
     vertical-align: top !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
-    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6) !important;
 }
 
-/* 5. TUS IMÁGENES Y LOGOS */
 .socio-card-oa img, .socio-card-oa-mini img {
-    width: 140px !important;
+    width: 150px !important;
     height: auto !important;
-    margin: 0 auto 15px !important;
-    display: block !important;
+    margin-bottom: 15px !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* 6. TEXTOS DENTRO DE TARJETAS */
-.socio-card-oa h3, .socio-card-oa p {
-    color: #111111 !important;
+.socio-card-oa h3, .socio-card-oa p, .tarjeta-presentacion h3, .tarjeta-presentacion p {
+    color: #001f3f !important; /* Texto oscuro en fondo blanco */
 }
 
-/* 7. EFECTO DE MOVIMIENTO DE TUS CARDS */
+/* 5. SECCIÓN DE SERVICIOS (MOVIMIENTO) */
 .card {
     overflow: hidden;
     transition: transform 0.3s ease;
+    background: #fff;
+    border-radius: 10px;
+    display: inline-block;
+    width: 300px;
+    margin: 15px;
 }
-.card:hover { transform: translateY(-5px); }
-.card img { transition: transform 0.5s ease; width: 100%; }
+
+.card:hover { transform: translateY(-10px); }
+
+.card img {
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
 .card:hover img { transform: scale(1.1); }
+
+/* 6. TÍTULOS GENERALES */
+h1, h2 {
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+}
+  
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
