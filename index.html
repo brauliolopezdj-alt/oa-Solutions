@@ -184,30 +184,28 @@ html { scroll-behavior: smooth; }
     max-width: 1100px;
   }
 
-    /* --- AJUSTES FINALES PARA ORLANDO --- */
+/* AJUSTES FINALES PARA ORLANDO */
 
-/* 1. Fondo: Azul transparente con desenfoque (Audio 1) */
 Sección {
-    Color de fondo: RGBA(0, 31, 63, 0.5) ¡importante;
-    Filtro-fondo: desenfoque(10px) ¡importante;
-    -webkit-filtro-fondo: desenfoque(10px) ¡importante;
+    background-color: rgba(0, 31, 63, 0.5) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
 }
 
-/* 2. Socios: Tarjetas blancas para que los logos no parezcan parches (Audio 2) */
 .socio-card-oa-mini {
-    Fondo: #FFFFFF ¡importante;
-    Radio-borde: 12px ¡importante;
-    Acolchado: 20px ¡importante;
-    Sombra-caja: 0 8px 20px RGBA(0,0,0,0.2) ¡importante;
-    Pantalla: flex ¡importante;
-    Justificar-contenido: centro ¡importante;
-    Alinear-elementos: centro ¡importante;
+    background-color: #FFFFFF !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2) !important;
 }
 
 .socio-card-oa-mini img {
-    Anchura-maxima: 100% ¡importante;
-    Altura-maxima: 90px ¡importante;
-    Ajuste-objeto: contener ¡importante;
+    max-width: 100% !important;
+    max-height: 90px !important;
+    object-fit: contain !important;
 }
     
 </style>
