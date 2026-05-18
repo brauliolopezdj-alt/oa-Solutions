@@ -3,64 +3,79 @@
 <head>
 
 <style>
-    /* AJUSTE TOTAL PARA CUALQUIER CELULAR */
-    @media (max-width: 768px) {
-        /* 1. Evitamos que la pantalla baile de lado a lado */
-        html, body {
-            overflow-x: hidden !important;
-            width: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
+    /* 1. CONFIGURACIÓN DEL FONDO (EDIFICIOS) */
+body {
+    background-image: url('https://brauliolopezdj-alt.github.io/oa-Solutions/edificios.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
 
-        /* 2. Contenedores al ancho total real */
-        .container, section, header, footer {
-            width: 100% !important;
-            max-width: 100% !important;
-            padding: 15px 10px !important; 
-            margin: 0 !important;
-            box-sizing: border-box !important;
-        }
+/* 2. EL AZUL TRANSPARENTE DE ORLANDO (EFECTO GLASS) */
+section, .Sección {
+    background-color: rgba(0, 31, 63, 0.7) !important; /* Azul marino con transparencia */
+    backdrop-filter: blur(12px); /* El efecto de vidrio empañado */
+    -webkit-backdrop-filter: blur(12px);
+    padding: 60px 20px !important;
+    text-align: center;
+}
 
-        /* 3. Tarjetas flexibles (se ajustan solas al tamaño del cel) */
-        .card, .area-card-full, .socio-card-oa-mini {
-            width: 100% !important; 
-            max-width: 100% !important;
-            margin: 10px 0 !important;
-            padding: 15px !important;
-            box-sizing: border-box !important;
-            display: block !important;
-        }
+/* 3. TARJETAS DE LOS SOCIOS (PARA QUE SE VEAN PROFESIONALES) */
+.socio-card-oa-mini {
+    background-color: #ffffff !important; /* Fondo blanco sólido para que resalten */
+    display: inline-block !important;
+    width: 280px !important;
+    margin: 15px !important;
+    padding: 30px !important;
+    border-radius: 20px !important;
+    vertical-align: top !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+}
 
-        /* 4. Letra que no se amontona */
-        h1 { font-size: 1.5rem !important; line-height: 1.2 !important; }
-        h2 { font-size: 1.3rem !important; }
-        p, li { font-size: 1rem !important; line-height: 1.4 !important; }
+.socio-card-oa-mini img {
+    width: 140px !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto 15px !important;
+}
 
-        /* 5. Imágenes inteligentes (nunca se salen de la pantalla) */
-        img {
-            max-width: 100% !important;
-            height: auto !important;
-            display: block !important;
-            margin: 10px auto !important;
-        }
+.socio-card-oa-mini h3 {
+    color: #001f3f !important; /* Título en azul oscuro */
+    margin-bottom: 10px;
+}
 
-        /* 6. Botones que se pueden picar bien con el dedo */
-        .btn-oa-compact {
-            display: block !important;
-            width: 100% !important;
-            text-align: center !important;
-            margin: 5px 0 !important;
-            padding: 12px !important;
-        }
+.socio-card-oa-mini p {
+    color: #333333 !important; /* Texto gris oscuro para lectura fácil */
+    font-size: 14px;
+}
 
-        /* 7. Arreglo para grids (fuerza una sola columna en todo) */
-        div[style*="display: grid"], .grid, .row {
-            display: flex !important;
-            flex-direction: column !important;
-            width: 100% !important;
-        }
+/* 4. EFECTO DE MOVIMIENTO (EL QUE YA TENÍAS) */
+.card { 
+    overflow: hidden; 
+    transition: transform 0.3s ease; 
+}
+.card:hover { 
+    transform: translateY(-5px); 
+}
+.card img { 
+    transition: transform 0.5s ease; 
+    width: 100%; 
+    display: block;
+}
+.card:hover img { 
+    transform: scale(1.1); 
+}
+
+/* 5. AJUSTE PARA CELULARES */
+@media (max-width: 768px) {
+    .socio-card-oa-mini {
+        width: 90% !important;
+        display: block !important;
+        margin: 15px auto !important;
     }
+}
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -68,160 +83,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O&A Consulting Solutions</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background: #f4f4f4; color: #333; }
-        header { background: #002347; color: white; padding: 40px; text-align: center; border-bottom: 5px solid #c5a059; }
-        header h1 { font-size: 2rem; }
-        header span { color: #c5a059; }
-        .eslogan { color: #c5a059; margin-top: 10px; font-style: italic; }
-        .container { max-width: 1100px; margin: 40px auto; padding: 20px; }
-        h2 { color: #002347; border-left: 5px solid #c5a059; padding-left: 15px; margin-bottom: 30px; }
-        
-        /* SECCION SOBRE NOSOTROS */
-        .sobre-nosotros { 
-            background: white; 
-            padding: 30px; 
-            border-radius: 10px; 
-            margin-bottom: 40px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .sobre-nosotros p { margin-bottom: 15px; line-height: 1.8; font-size: 1.1rem; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 180px; object-fit: cover; border-bottom: 4px solid #c5a059; }
-        .card-body { padding: 20px; }
-        .footer { background: #002347; color: white; text-align: center; padding: 20px; margin-top: 40px; }
-    </style>
+       
 </head>
-
-<style>
-
-
-html { scroll-behavior: smooth; }
-
-/* Estilos del Menú Lateral DERECHO */
-.sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 3000;
-    top: 0;
-    right: 0; /* Cambio a la derecha */
-    background-color: #002347;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    border-left: 3px solid #c5a059; /* Borde ahora a la izquierda del menú */
-}
-
-.sidebar a {
-    padding: 10px 25px;
-    text-decoration: none;
-    font-size: 15px;
-    color: white;
-    display: block;
-    transition: 0.3s;
-    font-family: sans-serif;
-    border-bottom: 1px solid rgba(197, 160, 89, 0.1);
-    text-align: right; /* Texto alineado a la derecha */
-}
-
-.sidebar a:hover { 
-    color: #c5a059; 
-    background: rgba(197, 160, 89, 0.1); 
-}
-
-.sidebar .closebtn {
-    position: absolute;
-    top: 10px;
-    left: 20px; /* X a la izquierda del panel */
-    font-size: 36px;
-    border: none;
-    color: #c5a059;
-}
-
-/* Botón de Hamburguesa en la Derecha */
-.openbtn {
-    font-size: 18px;
-    cursor: pointer;
-    background-color: #002347;
-    color: #c5a059;
-    padding: 10px 15px;
-    border: 2px solid #c5a059;
-    position: fixed;
-    top: 20px;
-    right: 20px; /* Aquí es donde lo querías */
-    z-index: 2500;
-    border-radius: 5px;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-
-  /* Esto le pone el fondo a toda la pantalla sin tocar tus etiquetas */
-  body {
-    margin: 0;
-    padding: 0;
-    background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    animation: moveBackground 40s linear infinite alternate;
-  }
-
-  @keyframes moveBackground {
-    from { background-position: left center; }
-    to { background-position: right center; }
-  }
-
-  /* Esto es para que las secciones blancas no tapen totalmente el fondo */
-  section {
-    background-color: rgba(255, 255, 255, 0.9) !important;
-    border-radius: 10px;
-    margin: 20px auto;
-    max-width: 1100px;
-  }
-
-/* --- ENTREGA FINAL OA SOLUTIONS --- */
-
-/* 1. Fondo Azul que deja ver los edificios */
-section, .Sección {
-    background-color: rgba(0, 31, 63, 0.6) !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
-    margin: 20px auto !important;
-    padding: 50px 20px !important;
-    border-radius: 15px !important;
-}
-
-/* 2. Tarjetas de socios blancas y bien alineadas */
-.socio-card-oa-mini {
-    background-color: #ffffff !important;
-    display: inline-block !important;
-    width: 300px !important;
-    margin: 15px !important;
-    padding: 30px !important;
-    border-radius: 20px !important;
-    vertical-align: top !important;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3) !important;
-}
-
-/* 3. Logos centrados y texto legible */
-.socio-card-oa-mini img {
-    width: 150px !important;
-    height: auto !important;
-    margin: 0 auto 20px !important;
-    display: block !important;
-}
-
-.socio-card-oa-mini h3, .socio-card-oa-mini p {
-    color: #1a1a1a !important;
-    text-align: center !important;
-}
-    
-</style>
 
 
 <body>
@@ -301,13 +165,6 @@ function closeNav() {
     </p>
 </section>
 
-
-<style>
-    /* Esto es lo único que se agrega para el movimiento */
-    .card { overflow: hidden; transition: transform 0.3s ease; }
-    .card img { transition: transform 0.5s ease; width: 100%; display: block; }
-    .card:hover img { transform: scale(1.1); }
-</style>
 
 
 <section id="servicios-ofrecidos" style="padding: 30px 15px !important; background-color: #002347 !important; text-align: center !important; font-family: sans-serif !important; border: 5px solid #c5a059 !important; max-width: 1100px !important; margin: 20px auto !important;">
@@ -748,32 +605,6 @@ Evaluar la rentabilidad esperada de proyectos y operaciones futuras, apoyando la
 </section>
 
 
-<style>
-    /* Estilos mejorados para que combinen con el fondo oscuro */
-    .area-card { 
-        overflow: hidden; 
-        transition: all 0.3s ease; 
-        background: #002347 !important; 
-        border-radius: 15px; 
-        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        display: flex;
-        flex-direction: column;
-        border: 2px solid #c5a059 !important; 
-    }
-    .area-card:hover { 
-        transform: translateY(-8px); 
-        box-shadow: 0 12px 25px rgba(197,160,89,0.3); /* Resplandor dorado al pasar el mouse */
-        border-color: #ffffff !important;
-    }
-    .img-principal-box {
-        margin: 0 auto 40px; 
-        max-width: 850px; 
-        overflow: hidden; 
-        border-radius: 20px; 
-        border: 4px solid #c5a059 !important; 
-    }
-</style>
-
 <section id="areas-conocimiento" style="padding: 60px 20px !important; background-color: #002347 !important; font-family: sans-serif !important; text-align: center !important; border: 5px solid #c5a059 !important;">
     
     <h2 style="color: #c5a059 !important; font-size: 1.8rem !important; margin-bottom: 10px !important;">Áreas de Conocimiento Especializado</h2>
@@ -793,23 +624,7 @@ Evaluar la rentabilidad esperada de proyectos y operaciones futuras, apoyando la
     </div>
 
     <div style="display: grid !important; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important; gap: 30px !important; max-width: 1200px !important; margin: 0 auto !important; text-align: left !important; align-items: start !important;">
-        
-        <style>
-            .area-card-full {
-                background: #002347 !important;
-                border: 2px solid #c5a059 !important;
-                border-radius: 15px !important;
-                overflow: hidden !important;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
-                display: flex !important;
-                flex-direction: column !important;
-                height: 100% !important;
-            }
-            .area-card-full img { width: 100% !important; height: 180px !important; object-fit: cover !important; }
-            .area-card-content { padding: 20px !important; }
-            .area-card-full h4 { color: #c5a059 !important; margin-bottom: 12px !important; border-bottom: 2px solid rgba(197,160,89,0.3) !important; padding-bottom: 5px !important; font-size: 1.1rem !important; }
-            .area-card-full p { color: white !important; font-size: 0.9rem !important; line-height: 1.6 !important; margin: 0 !important; }
-        </style>
+           
 
         <div class="area-card-full">
             <img src="https://images.pexels.com/photos/3182759/pexels-photo-3182759.jpeg?auto=compress&cs=tinysrgb&w=400">
@@ -892,34 +707,6 @@ Evaluar la rentabilidad esperada de proyectos y operaciones futuras, apoyando la
         </p>
     </div>
 
-    <style>
-        .socio-card-oa-mini {
-            overflow: hidden !important;
-            transition: all 0.4s ease !important;
-            background: #002347 !important;
-            border-radius: 12px !important;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
-            width: 100% !important;
-            max-width: 300px !important; 
-            border: 2px solid #c5a059 !important;
-            text-align: left !important;
-        }
-        .socio-card-oa-mini img {
-            width: 100% !important;
-            height: 140px !important; 
-            object-fit: contain !important; 
-            background-color: #ffffff !important; 
-            padding: 15px !important;
-            display: block !important;
-        }
-        .socio-card-oa-mini:hover {
-            transform: translateY(-8px) !important;
-            border-color: white !important;
-        }
-        .socio-info-mini {
-            padding: 18px !important;
-        }
-    </style>
 
     <div style="display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 25px !important; max-width: 1000px !important; margin: 0 auto !important;">
         
@@ -1006,20 +793,6 @@ Evaluar la rentabilidad esperada de proyectos y operaciones futuras, apoyando la
 
     <div style="display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 15px !important;">
         
-        <style>
-            .btn-oa-compact {
-                transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-                text-decoration: none !important;
-                display: block !important;
-                flex: 1 !important;
-                min-width: 260px !important;
-                max-width: 300px !important;
-            }
-            .btn-oa-compact:hover {
-                transform: scale(1.05) !important;
-                box-shadow: 0 8px 20px rgba(197, 160, 89, 0.3) !important;
-            }
-        </style>
 
         <a href="https://wa.me/5215512905938" target="_blank" class="btn-oa-compact">
             <div style="background: rgba(37, 211, 102, 0.08) !important; border: 2px solid #25D366 !important; padding: 15px !important; border-radius: 10px !important; text-align: center !important;">
