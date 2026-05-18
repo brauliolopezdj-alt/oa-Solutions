@@ -184,37 +184,41 @@ html { scroll-behavior: smooth; }
     max-width: 1100px;
   }
 
-/* --- TRUCO PARA FORZAR CAMBIOS DE ORLANDO --- */
+/* --- FORZADO TOTAL: SI NO CAMBIA CON ESTO NO CAMBIA CON NADA --- */
 
-/* 1. Forzamos el fondo con transparencia y blur */
+/* 1. Obligamos a que el azul sea transparente y tenga blur */
 html body section, 
 html body .Sección {
-    background-color: rgba(0, 31, 63, 0.5) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
+    background-color: rgba(0, 31, 63, 0.4) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
 }
 
-/* 2. Forzamos que los socios se vean bien y no se amontonen */
+/* 2. Arreglamos los socios para que no se vean gigantes ni amontonados */
 html body .socio-card-oa-mini {
     background-color: #ffffff !important;
-    border-radius: 15px !important;
-    padding: 25px !important;
-    margin: 15px !important;
+    border-radius: 20px !important;
+    padding: 20px !important;
+    margin: 10px !important;
     display: inline-block !important;
-    width: 320px !important;
+    width: 320px !important; /* Tamaño normal para que no se vea gigante */
+    min-height: 400px !important;
     vertical-align: top !important;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
 }
 
-/* 3. Forzamos el tamaño de los logos de los socios */
-html body .socio-card-oa-mini img,
-html body .socio-card-oa-mini IMG {
-    width: 160px !important;
+/* 3. Ajustamos el logo y el texto adentro de la tarjeta */
+html body .socio-card-oa-mini img {
+    width: 120px !important; /* Logo tamaño normal */
     height: auto !important;
-    max-height: 100px !important;
+    margin: 0 auto 20px !important;
     display: block !important;
-    margin: 0 auto 15px !important;
-    object-fit: contain !important;
+}
+
+html body .socio-card-oa-mini h3, 
+html body .socio-card-oa-mini p {
+    color: #333333 !important; /* Texto oscuro para que se lea en el fondo blanco */
+    text-align: center !important;
 }
     
 </style>
