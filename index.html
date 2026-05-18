@@ -3,79 +3,70 @@
 <head>
 
 <style>
-    /* 1. CONFIGURACIÓN DEL FONDO (EDIFICIOS) */
+  /* --- CÓDIGO RECONECTADO: ESTO REVIVE TU DISEÑO --- */
+
+/* 1. FONDO DE EDIFICIOS */
 body {
     background-image: url('https://brauliolopezdj-alt.github.io/oa-Solutions/edificios.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-/* 2. EL AZUL TRANSPARENTE DE ORLANDO (EFECTO GLASS) */
+/* 2. EL AZUL TRANSPARENTE (LO QUE TE PIDIÓ ORLANDO) */
 section, .Sección {
-    background-color: rgba(0, 31, 63, 0.7) !important; /* Azul marino con transparencia */
-    backdrop-filter: blur(12px); /* El efecto de vidrio empañado */
+    background-color: rgba(0, 31, 63, 0.7) !important;
+    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 60px 20px !important;
     text-align: center;
+    min-height: 400px;
 }
 
-/* 3. TARJETAS DE LOS SOCIOS (PARA QUE SE VEAN PROFESIONALES) */
-.socio-card-oa-mini {
-    background-color: #ffffff !important; /* Fondo blanco sólido para que resalten */
+/* 3. TÍTULOS */
+h1, h2 {
+    color: #ffffff !important;
+    text-align: center;
+}
+
+/* 4. TUS TARJETAS (ESTO ES LO QUE SE VEÍA BLANCO) */
+/* Usamos los nombres exactos de tu código: socio-card-oa */
+.socio-card-oa, .socio-card-oa-mini {
+    background-color: #ffffff !important;
     display: inline-block !important;
     width: 280px !important;
     margin: 15px !important;
-    padding: 30px !important;
-    border-radius: 20px !important;
+    padding: 25px !important;
+    border-radius: 15px !important;
     vertical-align: top !important;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+    text-align: center;
 }
 
-.socio-card-oa-mini img {
+/* 5. TUS IMÁGENES Y LOGOS */
+.socio-card-oa img, .socio-card-oa-mini img {
     width: 140px !important;
     height: auto !important;
-    display: block !important;
     margin: 0 auto 15px !important;
+    display: block !important;
 }
 
-.socio-card-oa-mini h3 {
-    color: #001f3f !important; /* Título en azul oscuro */
-    margin-bottom: 10px;
+/* 6. TEXTOS DENTRO DE TARJETAS */
+.socio-card-oa h3, .socio-card-oa p {
+    color: #111111 !important;
 }
 
-.socio-card-oa-mini p {
-    color: #333333 !important; /* Texto gris oscuro para lectura fácil */
-    font-size: 14px;
+/* 7. EFECTO DE MOVIMIENTO DE TUS CARDS */
+.card {
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
-
-/* 4. EFECTO DE MOVIMIENTO (EL QUE YA TENÍAS) */
-.card { 
-    overflow: hidden; 
-    transition: transform 0.3s ease; 
-}
-.card:hover { 
-    transform: translateY(-5px); 
-}
-.card img { 
-    transition: transform 0.5s ease; 
-    width: 100%; 
-    display: block;
-}
-.card:hover img { 
-    transform: scale(1.1); 
-}
-
-/* 5. AJUSTE PARA CELULARES */
-@media (max-width: 768px) {
-    .socio-card-oa-mini {
-        width: 90% !important;
-        display: block !important;
-        margin: 15px auto !important;
-    }
-}
+.card:hover { transform: translateY(-5px); }
+.card img { transition: transform 0.5s ease; width: 100%; }
+.card:hover img { transform: scale(1.1); }
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
